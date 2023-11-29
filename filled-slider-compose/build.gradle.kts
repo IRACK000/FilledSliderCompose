@@ -1,7 +1,7 @@
 import version.LibraryVersions
 
 apply {
-    //from("publish-remote.gradle")
+    from("publish-remote.gradle")
 }
 
 plugins {

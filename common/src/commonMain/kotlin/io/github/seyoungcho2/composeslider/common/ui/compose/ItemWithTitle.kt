@@ -1,4 +1,4 @@
-package io.github.seyoungcho2.composeslider.ui.compose
+package io.github.seyoungcho2.composeslider.common.ui.compose
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope

@@ -1,4 +1,4 @@
-package io.github.seyoungcho2.composeslider.ui.compose
+package io.github.seyoungcho2.composeslider.common.ui.compose
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable

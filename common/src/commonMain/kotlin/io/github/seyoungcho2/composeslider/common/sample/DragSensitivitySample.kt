@@ -1,4 +1,4 @@
-package io.github.seyoungcho2.composeslider.sample
+package io.github.seyoungcho2.composeslider.common.sample
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -14,21 +15,20 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import io.github.seyoungcho2.composeslider.ui.compose.CardRow
-import io.github.seyoungcho2.composeslider.ui.compose.ItemWithTitle
-import io.github.seyoungcho2.composeslider.ui.compose.TitleItem
+import io.github.seyoungcho2.composeslider.common.ui.compose.CardRow
+import io.github.seyoungcho2.composeslider.common.ui.compose.ItemWithTitle
+import io.github.seyoungcho2.composeslider.common.ui.compose.TitleItem
 import io.github.seyoungcho2.slider.FilledSlider
 import io.github.seyoungcho2.slider.model.SliderColor
-import io.github.seyoungcho2.slider.model.SliderType
 
 @Composable
-fun SliderTypeSample() {
+fun DragSensitivitySample() {
     Column(
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 12.dp, vertical = 8.dp)
     ) {
-        TitleItem(title = "sliderType")
+        TitleItem(title = "dragSensitivity")
         Spacer(modifier = Modifier.height(8.dp))
         CardRow(
             modifier = Modifier
@@ -38,7 +38,7 @@ fun SliderTypeSample() {
             ItemWithTitle(
                 modifier = Modifier
                     .weight(1f)
-                    .padding(vertical = 8.dp), title = "SliderType.Continuous"
+                    .padding(vertical = 8.dp), title = "dragSensitivity = 1f"
             ) {
                 FilledSlider(
                     modifier = Modifier.size(50.dp, 150.dp),
@@ -47,17 +47,19 @@ fun SliderTypeSample() {
                         enabledIndicationColor = Color(0xFF7D5FFF)
                     ),
                     currentValue = currentValue,
-                    sliderType = SliderType.Continuous,
+                    dragSensitivity = 1f,
                     valueRange = 0f..100f,
                     setCurrentValue = {
                         currentValue = it
                     }
                 )
             }
+            Spacer(modifier = Modifier.width(4.dp))
+            var currentValue2 by remember { mutableStateOf(20f) }
             ItemWithTitle(
                 modifier = Modifier
                     .weight(1f)
-                    .padding(vertical = 8.dp), title = "SliderType.Discrete(5)"
+                    .padding(vertical = 8.dp), title = "dragSensitivity = 2f"
             ) {
                 FilledSlider(
                     modifier = Modifier.size(50.dp, 150.dp),
@@ -65,11 +67,11 @@ fun SliderTypeSample() {
                         enabledTrackColor = Color(0xFFC6B8FF),
                         enabledIndicationColor = Color(0xFF7D5FFF)
                     ),
-                    currentValue = currentValue,
-                    sliderType = SliderType.Discrete(5),
+                    currentValue = currentValue2,
+                    dragSensitivity = 2f,
                     valueRange = 0f..100f,
                     setCurrentValue = {
-                        currentValue = it
+                        currentValue2 = it
                     }
                 )
             }

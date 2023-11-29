@@ -1,4 +1,4 @@
-package io.github.seyoungcho2.composeslider.ui.theme
+package io.github.seyoungcho2.composeslider.common.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

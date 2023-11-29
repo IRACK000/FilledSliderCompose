@@ -14,7 +14,7 @@ val robotoFontFamily = FontFamily(
 )
 
 // Set of Material typography styles to start with
-val Typography = Typography(
+val robotoTypography = Typography(
     bodyLarge = TextStyle(
         fontFamily = robotoFontFamily,
         fontWeight = FontWeight.Normal,
