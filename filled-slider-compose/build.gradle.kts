@@ -1,9 +1,3 @@
-import version.LibraryVersions
-
-apply {
-    from("publish-remote.gradle")
-}
-
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.android.library)
@@ -62,14 +56,6 @@ kotlin {
                 api(libs.androidx.core.ktx)
             }
         }
-        val androidUnitTest by getting {
-            dependencies {
-                // Test
-                implementation("junit:junit:${LibraryVersions.junit}")
-                implementation("androidx.test.ext:junit:${LibraryVersions.androidJUnit}")
-                implementation("androidx.test.espresso:espresso-core:${LibraryVersions.espresso}")
-            }
-        }
         val desktopMain by getting {
             dependencies {
                 api(compose.preview)
@@ -95,26 +81,5 @@ android {
 
     defaultConfig {
         minSdk = 24
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
-    }
-
-    buildFeatures {
-        compose = true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
-    }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
     }
 }
