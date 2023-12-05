@@ -4,4 +4,5 @@ object ProjectVersions {
     const val library = "8.0.1"
     const val kotlin = "1.9.0"
     const val kotlinAndroid = kotlin
+    const val compose = "1.5.0"
 }
